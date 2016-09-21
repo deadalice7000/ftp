@@ -9,9 +9,6 @@ import javax.swing.JMenuItem;
 
 public class MainFrame extends JFrame {
 
-private LeftPanel leftPanel;
-private RightPanel rightPanel;
-private MenuPanel menuPanel;
 	
 	public MainFrame(){
 		
@@ -26,12 +23,6 @@ private MenuPanel menuPanel;
 		
 		setJMenuBar(createMenuBar());
 
-		leftPanel = new LeftPanel();
-		rightPanel = new RightPanel();
-		menuPanel = new MenuPanel();
-		add(leftPanel, BorderLayout.WEST);
-		add(rightPanel, BorderLayout.EAST);
-		add(menuPanel, BorderLayout.NORTH);
 	}
 	
 	private JMenuBar createMenuBar(){
