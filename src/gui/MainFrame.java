@@ -9,20 +9,40 @@ import javax.swing.JMenuItem;
 
 public class MainFrame extends JFrame {
 
+	private LogArea logArea;
+	private LeftPanel leftPanel;
+	private RightPanel rightPanel;
+	private ButtonPanel buttonPanel;
+	
+	
 	
 	public MainFrame(){
 		
 		
-		super("JAVA FTP CLIENT BY DEADALICE7000");
-		setSize(800, 600);
+		super("FTPJ- BEST FTP CLIENT IN JAVA XDDDDDD");
+		setLayout(new BorderLayout());
+		
+		
+		
+		//CREATING COMPONENTS
+		logArea = new LogArea();
+		leftPanel = new LeftPanel();
+		rightPanel = new RightPanel();
+		buttonPanel = new ButtonPanel();
+		//ADDING COMPONENTS TO THE JFRAME
+		add(logArea, BorderLayout.SOUTH);
+		add(leftPanel, BorderLayout.WEST);
+		add(rightPanel, BorderLayout.CENTER);
+		add(buttonPanel, BorderLayout.NORTH);
+		//ADDING MENUBAR TO THE JFRAME
+		setJMenuBar(createMenuBar());
+		
+		//LOOKANDFEEL XD
+		setSize(1280, 800);
 		setVisible(true);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		setLayout(new BorderLayout());
-		
-		setJMenuBar(createMenuBar());
-
 	}
 	
 	private JMenuBar createMenuBar(){
