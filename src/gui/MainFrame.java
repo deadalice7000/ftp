@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JSplitPane;
 
 public class MainFrame extends JFrame {
 
@@ -13,15 +14,14 @@ public class MainFrame extends JFrame {
 	private LeftPanel leftPanel;
 	private RightPanel rightPanel;
 	private ButtonPanel buttonPanel;
+	private JSplitPane jSplitPane;
 	
 	
 	
 	public MainFrame(){
-		
-		
 		super("FTPJ- BEST FTP CLIENT IN JAVA XDDDDDD");
+
 		setLayout(new BorderLayout());
-		
 		
 		
 		//CREATING COMPONENTS
@@ -29,18 +29,19 @@ public class MainFrame extends JFrame {
 		leftPanel = new LeftPanel();
 		rightPanel = new RightPanel();
 		buttonPanel = new ButtonPanel();
+		jSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
 		//ADDING COMPONENTS TO THE JFRAME
 		add(logArea, BorderLayout.SOUTH);
-		add(leftPanel, BorderLayout.WEST);
-		add(rightPanel, BorderLayout.CENTER);
+		add(jSplitPane, BorderLayout.CENTER);
 		add(buttonPanel, BorderLayout.NORTH);
+		
 		//ADDING MENUBAR TO THE JFRAME
 		setJMenuBar(createMenuBar());
 		
-		//LOOKANDFEEL XD
+		//LOOKANDFEEL 
 		setSize(1280, 800);
 		setVisible(true);
-		setResizable(false);
+		setResizable(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 	}
